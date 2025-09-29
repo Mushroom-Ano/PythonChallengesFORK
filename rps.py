@@ -1,42 +1,42 @@
 import random
 
-playerWinCount = 0
-computerWinCount = 0
+player_win_count = 0
+computer_win_count = 0
 
 
-print("Welcome top rock paper scissors game!")
+print("welcome top rock paper scissors game!")
 
-while playerWinCount < 2 and computerWinCount < 2:
-    playerInput = input("It's your turn! r/p/s \n")
-    if(playerInput != "s" and playerInput != "p" and playerInput != "r"):
-        print("You must enter r, p or s!")
+while player_win_count < 2 and computer_win_count < 2:
+    player_input = input("it's your turn! r/p/s \n")
+    if(player_input != "s" and player_input != "p" and player_input != "r"):
+        print("you must enter r, p or s!")
         continue
 
-    comChoices = {0: "r", 1: "p", 2: "s"}
-    comTurn = comChoices[random.randint(0,2)]
+    com_choices = {0: "r", 1: "p", 2: "s"}
+    com_turn = com_choices[random.randint(0,2)]
 
-    print("The computer went: " + comTurn)
+    print("the computer went: " + com_turn)
 
-    # Compares Player and Computer choices
-    round = playerInput+comTurn
-    playerResults = {
+    # compares player and computer choices
+    round = player_input+com_turn
+    player_results = {
         "rr": "d", "rp": "l", "rs": "w",
         "pp": "d", "pr": "w", "ps": "l",
         "ss": "d", "sr": "l", "sp": "w"
         }
 
-    playerOutcome = playerResults[round]
+    player_outcome = player_results[round]
 
-    if playerOutcome == "w":
-        print("You won this round!")
-        playerWinCount+=1
-    elif playerOutcome == "d":
-        print("It's a draw!")
+    if player_outcome == "w":
+        print("you won this round!")
+        player_win_count+=1
+    elif player_outcome == "d":
+        print("it's a draw!")
     else:
-        print("You lost this round!")
-        computerWinCount+=1
+        print("you lost this round!")
+        computer_win_count+=1
 
-if playerWinCount == 2:
-    print("You Won!!!!!")
+if player_win_count == 2:
+    print("you won!!!!!")
 else:
-    print("Computer Won!")
+    print("computer won!")
