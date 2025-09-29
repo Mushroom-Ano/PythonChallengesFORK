@@ -1,11 +1,24 @@
 import random
 livesCounter = 10
-wordbank = ["pizza", "photosynthesis","hangman","computer","barcelona","mauve","pneumonia","flabbergasted"]
+wordbank = [
+    "python", "variable", "function", "object", "compile",
+    "hangman", "wizard", "jungle", "puzzle", "rocket",
+    "galaxy", "nebula", "planet", "asteroid", "comet",
+    "castle", "sword", "dragon", "knight", "quest",
+    "forest", "ocean", "desert", "island", "mountain",
+    "banana", "guitar", "piano", "violin", "trumpet",
+    "zebra", "penguin", "giraffe", "dolphin", "kangaroo",
+    "mystery", "adventure", "treasure", "pyramid", "labyrinth",
+    "shadow", "phantom", "ghost", "skeleton", "zombie",
+    "energy", "gravity", "fractal", "quantum", "neutron",
+    "coffee", "chocolate", "sandwich", "pancake", "cookie",
+    "smile", "friendship", "happiness", "freedom", "courage"
+]
 chosenWord = random.choice(wordbank)
 guessletters = []
 for i in range(len(chosenWord)):
     guessletters.append("_")
-# print(chosenWord)
+print(chosenWord)
 print(guessletters)
 
 while livesCounter > 0:
@@ -24,4 +37,4 @@ while livesCounter > 0:
         print("You win!")
         break
 if livesCounter == 0:
-    print("You lost! Haha")
+    print("You lost! Haha, the word was " + chosenWord)
