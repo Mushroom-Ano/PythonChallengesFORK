@@ -13,6 +13,7 @@ while playerWinCount < 2 and computerWinCount < 2:
 
     print("The computer went: " + comTurn)
 
+    # Compares Player and Computer choices
     round = playerInput+comTurn
     playerResults = {
         "rr": "d", "rp": "l", "rs": "w",
