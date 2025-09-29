@@ -26,6 +26,7 @@ while livesCounter > 0:
     if len(userinput) !=1:
         print("Your input must be one letter!")
         continue
+    userinput = userinput.lower()
     for i in range(len(chosenWord)):
         if userinput == chosenWord[i]:
             guessletters[i] = userinput

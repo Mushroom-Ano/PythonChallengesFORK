@@ -8,6 +8,10 @@ print("Welcome top rock paper scissors game!")
 
 while playerWinCount < 2 and computerWinCount < 2:
     playerInput = input("It's your turn! r/p/s \n")
+    if(playerInput != "s" and playerInput != "p" and playerInput != "r"):
+        print("You must enter r, p or s!")
+        continue
+
     comChoices = {0: "r", 1: "p", 2: "s"}
     comTurn = comChoices[random.randint(0,2)]
 
