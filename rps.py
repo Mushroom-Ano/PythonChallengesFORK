@@ -2,27 +2,35 @@ import random
 
 player_win_count = 0
 computer_win_count = 0
+has_quit = False
 
 
-print("welcome top rock paper scissors game!")
+print("Welcome to our Rock Paper Scissors game!")
+print("Press q to quit")
 
-while player_win_count < 2 and computer_win_count < 2:
-    player_input = input("it's your turn! r/p/s \n")
-    if(player_input != "s" and player_input != "p" and player_input != "r"):
-        print("you must enter r, p or s!")
+
+while not has_quit:
+    player_input = input("it's your turn! rock/paper/scissors \n").lower()
+    if player_input != "scissors" and player_input != "paper" and player_input != "rock":
+
+        print("you must enter rock, paper or scissors!")
         continue
+    elif player_input == "q":
+        has_quit = True
 
-    com_choices = {0: "r", 1: "p", 2: "s"}
+
+
+    com_choices = {0: "rock", 1: "paper", 2: "scissors"}
     com_turn = com_choices[random.randint(0,2)]
 
-    print("the computer went: " + com_turn)
+    print("the computer chose: " + com_turn)
 
     # compares player and computer choices
     round = player_input+com_turn
     player_results = {
-        "rr": "d", "rp": "l", "rs": "w",
-        "pp": "d", "pr": "w", "ps": "l",
-        "ss": "d", "sr": "l", "sp": "w"
+        "rockrock": "d", "rockpaper": "l", "rockscissors": "w",
+        "paperpaper": "d", "paperrock": "w", "paperscissors": "l",
+        "scissorsscissors": "d", "scissorrock": "l", "scissorspaper": "w"
         }
 
     player_outcome = player_results[round]
@@ -36,7 +44,6 @@ while player_win_count < 2 and computer_win_count < 2:
         print("you lost this round!")
         computer_win_count+=1
 
-if player_win_count == 2:
-    print("you won!!!!!")
-else:
-    print("computer won!")
+    print(f"player {player_win_count} : {computer_win_count} computer")
+
+print(f"player {player_win_count} : {computer_win_count} computer")
